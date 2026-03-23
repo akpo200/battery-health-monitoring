@@ -1,0 +1,137 @@
+{
+  "shape": [
+    29180,
+    7
+  ],
+  "columns": [
+    "Voltage_measured",
+    "Current_measured",
+    "Temperature_measured",
+    "SoC",
+    "cycle_number",
+    "battery_id",
+    "SoH"
+  ],
+  "dtypes": {
+    "Voltage_measured": "float64",
+    "Current_measured": "float64",
+    "Temperature_measured": "float64",
+    "SoC": "float64",
+    "cycle_number": "int64",
+    "battery_id": "object",
+    "SoH": "float64"
+  },
+  "nan_total": 0,
+  "SoH_min": 70.02223613488894,
+  "SoH_max": 122.01162842295211,
+  "SoH_mean": 82.34763952301803,
+  "batteries": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018",
+    "B0025",
+    "B0026",
+    "B0027",
+    "B0028",
+    "B0029",
+    "B0030",
+    "B0031",
+    "B0032",
+    "B0033",
+    "B0034",
+    "B0036",
+    "B0038",
+    "B0039",
+    "B0040",
+    "B0042",
+    "B0043",
+    "B0044",
+    "B0046",
+    "B0047",
+    "B0048"
+  ],
+  "cycles_per_battery": {
+    "B0005": 123,
+    "B0006": 109,
+    "B0007": 167,
+    "B0018": 104,
+    "B0025": 28,
+    "B0026": 27,
+    "B0027": 28,
+    "B0028": 28,
+    "B0029": 40,
+    "B0030": 40,
+    "B0031": 40,
+    "B0032": 40,
+    "B0033": 115,
+    "B0034": 70,
+    "B0036": 196,
+    "B0038": 35,
+    "B0039": 33,
+    "B0040": 33,
+    "B0042": 57,
+    "B0043": 54,
+    "B0044": 50,
+    "B0046": 17,
+    "B0047": 11,
+    "B0048": 14
+  },
+  "bins_per_cycle_sample": {
+    "count": 1459.0,
+    "mean": 20.0,
+    "std": 0.0,
+    "min": 20.0,
+    "25%": 20.0,
+    "50%": 20.0,
+    "75%": 20.0,
+    "max": 20.0
+  },
+  "head": [
+    {
+      "Voltage_measured": 3.9644297048238255,
+      "Current_measured": -0.9123190307184996,
+      "Temperature_measured": 5.67826964672318,
+      "SoC": 97.69972097435466,
+      "cycle_number": 1,
+      "battery_id": "B0047",
+      "SoH": 83.6263218891919
+    },
+    {
+      "Voltage_measured": 3.843125551534664,
+      "Current_measured": -0.9953344258737454,
+      "Temperature_measured": 6.408628778958751,
+      "SoC": 92.5100611869023,
+      "cycle_number": 1,
+      "battery_id": "B0047",
+      "SoH": 83.6263218891919
+    },
+    {
+      "Voltage_measured": 3.796379539425812,
+      "Current_measured": -0.9956014006964417,
+      "Temperature_measured": 7.576324853435199,
+      "SoC": 87.42297961447301,
+      "cycle_number": 1,
+      "battery_id": "B0047",
+      "SoH": 83.6263218891919
+    },
+    {
+      "Voltage_measured": 3.74950991219682,
+      "Current_measured": -0.9951866095228376,
+      "Temperature_measured": 8.334521724605734,
+      "SoC": 82.44434158103651,
+      "cycle_number": 1,
+      "battery_id": "B0047",
+      "SoH": 83.6263218891919
+    },
+    {
+      "Voltage_measured": 3.699625280228132,
+      "Current_measured": -0.9952656828597466,
+      "Temperature_measured": 7.389032119900674,
+      "SoC": 77.46575658437939,
+      "cycle_number": 1,
+      "battery_id": "B0047",
+      "SoH": 83.6263218891919
+    }
+  ]
+}
