@@ -1,6 +1,6 @@
-# 🔋 Prédiction du SoH des Batteries avec LSTM
+#  Prédiction du SoH des Batteries avec LSTM Par Pascale Nancy Alia AKPO
 
-Ce projet scolaire implémente un modèle de Deep Learning (**LSTM**) pour prédire l’état de santé (**State of Health - SoH**) des batteries à partir de mesures électriques (tension, courant, température, SoC) collectées sur des cycles de décharge.
+Ce projet De Master 2 Deep learning implémente un modèle de Deep Learning (**LSTM**) pour prédire l’état de santé (**State of Health - SoH**) des batteries à partir de mesures électriques (tension, courant, température, SoC) collectées sur des cycles de décharge.
 
 ## 📁 Structure du Projet
 
@@ -41,11 +41,11 @@ cd app
 streamlit run app.py
 ```
 
-## 🧠 Modèle LSTM
+##  Modèle LSTM
 Le modèle utilise deux couches LSTM suivies de couches Dropout pour éviter le sur-apprentissage, et une couche Dense finale pour la régression du SoH.
 Les données sont découpées en **fenêtres glissantes de 10 points** pour capturer la dynamique temporelle du signal.
 
-## 📊 Métriques (Exemple)
+##  Métriques (Exemple)
 - **MAE** (Mean Absolute Error)
 - **RMSE** (Root Mean Squared Error)
 - **R² Score** (Corrélation entre réel et prédit)
