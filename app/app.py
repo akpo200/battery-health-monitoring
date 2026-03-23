@@ -9,16 +9,14 @@ import os
 import pickle
 
 # --- CONFIGURATION DES CHEMINS ---
-# On utilise le module "os" pour définir les chemins réels sur l'ordinateur afin d'éviter les erreurs.
-# BASE_DIR récupère le répertoire du fichier actuel (le dossier app/).
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, '..', 'models', 'battery_soh_lstm.keras')
-SCALER_X_PATH = os.path.join(BASE_DIR, '..', 'models', 'scaler_x.pkl')
-SCALER_Y_PATH = os.path.join(BASE_DIR, '..', 'models', 'scaler_y.pkl')
-DATA_PATH = os.path.join(BASE_DIR, '..', 'data', 'battery_health_dataset.csv')
-METRICS_PATH = os.path.join(BASE_DIR, '..', 'models', 'metrics_results.json')
-TEST_DATA_X = os.path.join(BASE_DIR, '..', 'data', 'processed', 'X_test.npy')
-TEST_DATA_Y = os.path.join(BASE_DIR, '..', 'data', 'processed', 'y_test.npy')
+# On utilise des chemins relatifs par rapport à la racine du projet pour Streamlit Cloud.
+MODEL_PATH = 'models/battery_soh_lstm.keras'
+SCALER_X_PATH = 'models/scaler_x.pkl'
+SCALER_Y_PATH = 'models/scaler_y.pkl'
+DATA_PATH = 'data/battery_health_dataset.csv'
+METRICS_PATH = 'models/metrics_results.json'
+TEST_DATA_X = 'data/processed/X_test.npy'
+TEST_DATA_Y = 'data/processed/y_test.npy'
 
 # --- CONFIGURATION DE LA PAGE STREAMLIT ---
 # On configure ici l'apparence générale du tableau de bord.
