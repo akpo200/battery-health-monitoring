@@ -104,11 +104,17 @@ st.markdown("""
 # --- CHARGEMENT DU MODÈLE ET MISE EN CACHE ---
 # @st.cache_resource permet à Streamlit de garder le modèle AI (Tensorflow) en mémoire,
 # ainsi il n'aura pas à recharger le modèle depuis le fichier .keras à chaque action de l'utilisateur.
+model_error = None
 @st.cache_resource
 def load_model():
+    global model_error
     if os.path.exists(MODEL_PATH):
         try: return tf.keras.models.load_model(MODEL_PATH)
-        except: return None
+        except Exception as e:
+            model_error = str(e)
+            return None
+    else:
+        model_error = f"File not found: {MODEL_PATH}"
     return None
 
 # @st.cache_data fonctionne comme @st.cache_resource mais est spécifiquement conçu
@@ -122,11 +128,16 @@ model = load_model()
 df = load_dataset()
 
 # --- CHARGEMENT SCALERS ---
+scaler_error = None
 try:
     if os.path.exists(SCALER_X_PATH) and os.path.exists(SCALER_Y_PATH):
         with open(SCALER_X_PATH, 'rb') as f: scaler_x = pickle.load(f)
         with open(SCALER_Y_PATH, 'rb') as f: scaler_y = pickle.load(f)
-except:
+    else:
+        scaler_error = "Scalers files missing."
+        scaler_x, scaler_y = None, None
+except Exception as e:
+    scaler_error = str(e)
     scaler_x, scaler_y = None, None
 
 # BARRE LATÉRALE - FIXE
@@ -191,6 +202,8 @@ elif page == "Simulation":
     
     if model is None or scaler_x is None:
         st.error("Services indisponibles.")
+        if model_error: st.error(f"Erreur Modèle : {model_error}")
+        if scaler_error: st.error(f"Erreur Scaler : {scaler_error}")
     else:
         st.subheader("Paramètres")
         c1, c2, c3 = st.columns(3)
