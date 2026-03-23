@@ -4,7 +4,7 @@ from sklearn.preprocessing import MinMaxScaler
 import os
 
 # 1. Chargement des données
-print("🔍 Chargement des données...")
+print("Chargement des données...")
 df = pd.read_csv('data/battery_health_dataset.csv')
 
 # 2. SELECTION DES VARIABLES
@@ -15,7 +15,7 @@ target = 'SoH'
 
 # 3. NORMALISATION
 # On normalise pour aider le modèle LSTM à converger
-print("⚖️ Normalisation des données...")
+print("Normalisation des données...")
 scaler_x = MinMaxScaler()
 scaler_y = MinMaxScaler()
 
@@ -43,11 +43,11 @@ def create_sequences(df, window_size=10):
     return np.array(X), np.array(y)
 
 window_size = 10
-print(f"🪟 Création des séquences (fenêtre = {window_size})...")
+print(f"Creation des sequences (fenetre = {window_size})...")
 X, y = create_sequences(df, window_size)
 
-print(f"✅ Forme de X: {X.shape}") # (Samples, Time_steps, Features)
-print(f"✅ Forme de y: {y.shape}")
+print(f"Forme de X: {X.shape}") # (Samples, Time_steps, Features)
+print(f"Forme de y: {y.shape}")
 
 # 5. SÉPARATION TRAIN / TEST
 from sklearn.model_selection import train_test_split
@@ -60,7 +60,7 @@ with open('models/scaler_x.pkl', 'wb') as f:
     pickle.dump(scaler_x, f)
 with open('models/scaler_y.pkl', 'wb') as f:
     pickle.dump(scaler_y, f)
-print("⚖️ Scalers sauvegardés dans models/scaler_x.pkl et models/scaler_y.pkl")
+print("Scalers sauvegardés dans models/scaler_x.pkl et models/scaler_y.pkl")
 
 os.makedirs('data/processed', exist_ok=True)
 np.save('data/processed/X_train.npy', X_train)
