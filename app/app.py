@@ -180,7 +180,7 @@ elif page == "Performance":
     else:
         st.error("Métriques non trouvées.")
 
-    nb_plot = os.path.join(BASE_DIR, '..', 'notebooks', 'actual_vs_predicted.png')
+    nb_plot = 'notebooks/actual_vs_predicted.png'
     if os.path.exists(nb_plot):
         st.image(nb_plot, caption="Précision LSTM : Réel vs Prédit", use_container_width=True)
 
